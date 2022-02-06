@@ -240,7 +240,27 @@ function calculateHD(intermediates) {
 }
 
 
+function appendZeros() {
+	let plaintext = document.getElementById("plaintext");
+	let key = document.getElementById("key");
+
+	if (plaintext.value.length > 16) {
+		plaintext.value = plaintext.value.slice(0, 16);
+	} else if (plaintext.value.length < 16) {
+		plaintext.value = plaintext.value.padEnd(16, "0");
+	}
+
+	if (key.value.length > 16) {
+		key.value = key.value.slice(0, 16);
+	} else if (key.value.length < 16) {
+		key.value = key.value.padEnd(16, "0");
+	}
+}
+
+
 document.getElementById("submit").addEventListener("click", () => {
+	appendZeros();
+	
 	let plaintext = document.getElementById("plaintext").value;
 	let key = document.getElementById("key").value;
 
