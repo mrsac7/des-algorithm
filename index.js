@@ -255,6 +255,8 @@ function appendZeros() {
 	} else if (key.value.length < 16) {
 		key.value = key.value.padEnd(16, "0");
 	}
+	document.getElementById("plaintext").value = plaintext;
+	document.getElementBykey("key").value = key;
 }
 
 
