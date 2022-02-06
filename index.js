@@ -239,21 +239,20 @@ function calculateHD(intermediates) {
 	return output;
 }
 
-
 function appendZeros() {
-	let plaintext = document.getElementById("plaintext");
-	let key = document.getElementById("key");
+	let plaintext = document.getElementById("plaintext").value;
+	let key = document.getElementById("key").value;
 
-	if (plaintext.value.length > 16) {
-		plaintext.value = plaintext.value.slice(0, 16);
-	} else if (plaintext.value.length < 16) {
-		plaintext.value = plaintext.value.padEnd(16, "0");
+	if (plaintext.length > 16) {
+		plaintext = plaintext.slice(0, 16);
+	} else if (plaintext.length < 16) {
+		plaintext = plaintext.padEnd(16, "0");
 	}
 
-	if (key.value.length > 16) {
-		key.value = key.value.slice(0, 16);
-	} else if (key.value.length < 16) {
-		key.value = key.value.padEnd(16, "0");
+	if (key.length > 16) {
+		key = key.slice(0, 16);
+	} else if (key.length < 16) {
+		key = key.padEnd(16, "0");
 	}
 	document.getElementById("plaintext").value = plaintext;
 	document.getElementById("key").value = key;
@@ -265,6 +264,7 @@ document.getElementById("submit").addEventListener("click", () => {
 	
 	let plaintext = document.getElementById("plaintext").value;
 	let key = document.getElementById("key").value;
+
 
 	plaintext = initialHexToBin(plaintext);
 	key = initialHexToBin(key);
