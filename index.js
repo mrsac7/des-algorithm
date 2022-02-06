@@ -226,6 +226,7 @@ function managePlot() {
 document.getElementById("plot").addEventListener("click", managePlot);
 document.getElementById("plot").addEventListener("touchstart", managePlot);
 document.getElementById("plot").addEventListener("input", managePlot);
+document.getElementById("plot").addEventListener("change", managePlot);
 
 
 
