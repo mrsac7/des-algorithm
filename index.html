@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Avalance Effect in DES</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="index.css">
+	<script type="module" src="index.js"></script>
+	<script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+</head>
+
+<body>
+	<div style="width:1000px; margin:auto; padding:0 50px 50px 50px; border:2px solid black; border-radius: 10px;">
+		<div>
+			<h1>Avalance Effect in DES Algorithm</h1>
+		</div>
+		<div>
+			<p>Experiment with graphing the Box and Whisker plot between HD and round number to investigate the Avalanche
+				Effect evolution through the DES rounds.</p>
+		</div>
+
+		<div>
+			<input type="range" value="1" min="0" max="2" style="width:100%" id="mode">
+			<datalist>
+				<option value="0" label="Different Plaintexts"></option>
+				<option value="1" label="Different Hamming Distances"></option>
+				<option value="2" label="Different Secret Keys"></option>
+			</datalist>
+		</div>
+
+		<div>
+			<div style="width:60%; margin:50px auto">
+				<div class="form-element">
+					<label class="label">Original Plaintext</label>
+					<input type="text" class="input" id="plaintext" value="57b612ec90f69888">
+				</div>
+
+				<div class="form-element">
+					<label class="label">Original Secret Key</label>
+					<input type="text" class="input" id="key" value="cea6aa9b2c6fae66">
+				</div>
+
+				<div class="form-element">
+					<label class="label">Original Ciphertext</label>
+					<input type="text" readonly class="input" id="ciphertext" style="background-color: whitesmoke"
+						value="930a720638549b14">
+				</div>
+				<div class="form-element" style="margin: 10px 0;">
+					<button class="btn" id="submit">Submit</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="plot-slider">
+			<input type="range" value="0" min="0" max="3" style="width:100%;" id="plot">
+			<datalist>
+				<option value="0" label="Box Plot" width="20%"></option>
+				<option value="1" label="Table 1" width="30%"></option>
+				<option value="2" label="Table 2" width="30%"></option>
+				<option value="3" label="Table 3" width="20%"></option>
+			</datalist>
+		</div>
+
+		<div class="chart" id="boxplot">
+			<div style="margin:0 100px;" id="boxplot-plot"></div>
+		</div>
+
+		<div class="chart" id="table1">
+			<p class="desc"><strong>Table 1: </strong>Information of Plaintext, Secret Key and Ciphertext</p>
+			<table>
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Plaintext</th>
+						<th>Secretkey</th>
+						<th>Ciphertext</th>
+					</tr>
+				</thead>
+				<tbody id="table1-body"></tbody>
+			</table>
+		</div>
+
+		<div class="chart" id="table2">
+			<p class="desc"><strong>Table 2: </strong> Variation of Hamming Distances in each round</p>
+			<table>
+				<thead>
+					<tr>
+						<th rowspan="2">Round</th>
+						<th colspan="5">Hamming Distance</th>
+					</tr>
+					<tr>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+					</tr>
+				</thead>
+				<tbody id="table2-body"></tbody>
+			</table>
+		</div>
+
+		<div class="chart" id="table3">
+			<p class="desc"><strong>Table 3: </strong>Variation of Intermediate Values in each round</p>
+			<table>
+				<thead>
+					<tr>
+						<th rowspan="2">Round</th>
+						<th colspan="6">Intermediate Values</th>
+					</tr>
+					<tr>
+						<th>0</th>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+					</tr>
+				</thead>
+				<tbody id="table3-body"></tbody>
+			</table>
+		</div>
+
+	</div>
+</body>
+
+</html>
