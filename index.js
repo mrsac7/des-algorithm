@@ -84,7 +84,7 @@ function generateBoxPlot(HDList) {
 	}
 
 	let layout = {
-		title: "<b>Box Plot: </b>" + "Graph showing variation of Hamming Distance in each j",
+		title: "<b>Box Plot: </b>" + "Graph showing variation of Hamming Distance in each round",
 		xaxis: {
 			title: "<b>Round Number</b>",
 		},
@@ -213,7 +213,8 @@ function generateTable3(intermediates) {
 	}
 }
 
-function managePlot() {
+function managePlot(event) {
+	event.preventDefault();
 	let visibliity = document.getElementById("plot-slider").style.display;
 	let value = document.getElementById("plot").value;
 	if (visibliity == "none") return;
@@ -227,8 +228,6 @@ document.getElementById("plot").addEventListener("click", managePlot);
 document.getElementById("plot").addEventListener("touchstart", managePlot);
 document.getElementById("plot").addEventListener("input", managePlot);
 document.getElementById("plot").addEventListener("change", managePlot);
-
-
 
 function calculateHD(intermediates) {
 	let output = [];
