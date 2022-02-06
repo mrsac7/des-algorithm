@@ -87,5 +87,12 @@ option {
 }
 
 #plot-slider {
+    width: 80%;
+    margin: auto;
     display: none;
+}
+
+.slider {
+    width: 80%;
+    margin: auto;
 }
