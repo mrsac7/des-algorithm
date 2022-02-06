@@ -213,8 +213,7 @@ function generateTable3(intermediates) {
 	}
 }
 
-function managePlot(event) {
-	event.preventDefault();
+function managePlot() {
 	let visibliity = document.getElementById("plot-slider").style.display;
 	let value = document.getElementById("plot").value;
 	if (visibliity == "none") return;
@@ -226,7 +225,8 @@ function managePlot(event) {
 
 document.getElementById("plot").addEventListener("click", managePlot);
 document.getElementById("plot").addEventListener("touchstart", managePlot);
-document.getElementById("plot").addEventListener("oninput", managePlot);
+document.getElementById("plot").addEventListener("input", managePlot);
+
 
 
 function calculateHD(intermediates) {
