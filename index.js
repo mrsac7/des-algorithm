@@ -226,6 +226,8 @@ function managePlot(event) {
 
 document.getElementById("plot").addEventListener("click", managePlot);
 document.getElementById("plot").addEventListener("touchstart", managePlot);
+document.getElementById("plot").addEventListener("oninput", managePlot);
+
 
 function calculateHD(intermediates) {
 	let output = [];
