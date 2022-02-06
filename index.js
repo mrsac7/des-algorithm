@@ -213,7 +213,7 @@ function generateTable3(intermediates) {
 	}
 }
 
-document.getElementById("plot").addEventListener("click", () => {
+function managePlot() {
 	let visibliity = document.getElementById("plot-slider").style.display;
 	let value = document.getElementById("plot").value;
 	if (visibliity == "none") return;
@@ -221,7 +221,10 @@ document.getElementById("plot").addEventListener("click", () => {
 	else if (value == 1) showTable1();
 	else if (value == 2) showTable2();
 	else if (value == 3) showTable3();
-});
+}
+
+document.getElementById("plot").addEventListener("click", managePlot);
+document.getElementById("plot").addEventListener("touchstart", managePlot);
 
 function calculateHD(intermediates) {
 	let output = [];
@@ -258,10 +261,9 @@ function appendZeros() {
 	document.getElementById("key").value = key;
 }
 
-
-document.getElementById("submit").addEventListener("click", () => {
+function plotCharts() {
 	appendZeros();
-	
+
 	let plaintext = document.getElementById("plaintext").value;
 	let key = document.getElementById("key").value;
 
@@ -306,5 +308,6 @@ document.getElementById("submit").addEventListener("click", () => {
 		showBoxPlot();
 	}
 
-
-});
+}
+document.getElementById("submit").addEventListener("touchstart", plotCharts);
+document.getElementById("submit").addEventListener("click", plotCharts);
