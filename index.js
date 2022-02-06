@@ -256,7 +256,7 @@ function appendZeros() {
 		key.value = key.value.padEnd(16, "0");
 	}
 	document.getElementById("plaintext").value = plaintext;
-	document.getElementBykey("key").value = key;
+	document.getElementById("key").value = key;
 }
 
 
