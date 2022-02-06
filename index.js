@@ -213,7 +213,8 @@ function generateTable3(intermediates) {
 	}
 }
 
-function managePlot() {
+function managePlot(event) {
+	event.preventDefault();
 	let visibliity = document.getElementById("plot-slider").style.display;
 	let value = document.getElementById("plot").value;
 	if (visibliity == "none") return;
@@ -261,7 +262,8 @@ function appendZeros() {
 	document.getElementById("key").value = key;
 }
 
-function plotCharts() {
+function plotCharts(event) {
+	event.preventDefault();
 	appendZeros();
 
 	let plaintext = document.getElementById("plaintext").value;
