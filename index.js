@@ -13,7 +13,7 @@ String.prototype.replaceAtIndex = function (index, value) {
 function generateDifferentIndices(dist) {
 	let indices = [];
 	while (indices.length < dist) {
-		let index = Math.floor(Math.random() * 65);
+		let index = Math.floor(Math.random() * 64);
 		if (indices.indexOf(index) === -1) indices.push(index);
 	}
 	return indices;
