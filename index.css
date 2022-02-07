@@ -60,6 +60,7 @@ tr:nth-child(even) {
     border-radius: 5px;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .inline {
