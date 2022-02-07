@@ -12,9 +12,10 @@ String.prototype.replaceAtIndex = function (index, value) {
 
 function generateDifferentIndices(dist) {
 	let indices = [];
+	let dontCare = [7, 15, 23, 31, 39, 47, 55, 63];
 	while (indices.length < dist) {
 		let index = Math.floor(Math.random() * 64);
-		if (indices.indexOf(index) === -1) indices.push(index);
+		if (indices.indexOf(index) === -1 && dontCare.indexOf(index) === -1) indices.push(index);
 	}
 	return indices;
 }
@@ -95,7 +96,7 @@ function generateBoxPlot(HDList) {
 		width: 800,
 		font: {
 			family: 'Zilla Slab',
-  }
+		}
 	};
 
 	let config = {
